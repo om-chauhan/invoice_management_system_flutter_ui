@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:invoice_management/imports.dart';
 
 class Commons {
   static const tileBackgroundColor = const Color(0xFFF1F1F1);
@@ -16,46 +13,23 @@ class Commons {
   static const mainAppColor = const Color(0xFF4D0F29);
   static const gradientBackgroundColorStart = const Color(0xFF4D0F29);
   static const popupItemBackColor = const Color(0xFFDADADB);
-
-  static Widget chuckyLoader() {
-    return Center(child: SpinKitFoldingCube(
-      itemBuilder: (BuildContext context, int index) {
-        return DecoratedBox(
-          decoration: BoxDecoration(
-            color: index.isEven ? Color(0xFFFFFFFF) : Color(0xFF311433),
-          ),
-        );
-      },
-    ));
-  }
+  static List<Color> dashColor = [Color(0xff1AB0B0), Color(0xffFF7544), Color(0xffFA5A7D), Color(0xff8676FE)];
 
   static void showError(BuildContext context, String message) {
     showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-              title: Text(message),
+              title: TextBuilder(text: message),
               backgroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(15)),
+              shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15)),
               actions: <Widget>[
                 TextButton(
-                  child: Text("Ok"),
+                  child: TextBuilder(text: "Ok"),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                 ),
               ],
             ));
-  }
-
-  static Widget chuckyLoading(String message) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Padding(padding: EdgeInsets.all(18), child: Text(message)),
-        chuckyLoader(),
-      ],
-    );
   }
 }

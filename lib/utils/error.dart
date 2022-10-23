@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:invoice_management/imports.dart';
 
 class Error extends StatelessWidget {
   final String? errorMessage;
 
   final VoidCallback? onRetryPressed;
 
-  const Error({Key? key, this.errorMessage, this.onRetryPressed})
-      : super(key: key);
+  const Error({Key? key, this.errorMessage, this.onRetryPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +13,15 @@ class Error extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(
-            errorMessage!,
+          TextBuilder(
+            text: errorMessage!,
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 18,
-            ),
+            fontSize: 18,
+            color: Colors.black,
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           ElevatedButton(
-            child: Text('Retry', style: TextStyle(color: Colors.black)),
+            child: TextBuilder(text: 'Retry', color: Colors.black),
             onPressed: onRetryPressed,
           )
         ],

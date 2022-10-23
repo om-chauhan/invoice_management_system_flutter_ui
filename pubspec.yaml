@@ -1,5 +1,5 @@
 name: invoice_management
-description: Invoice Management System.
+description: Invoice Management UI.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -13,9 +13,10 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  flutter_spinkit: ^5.0.0
-  fl_chart: ^0.36.2
-  path_provider: ^2.0.2
+  device_preview: ^1.1.0
+  platform: ^3.1.0
+  google_fonts: ^3.0.1
+  fl_chart: ^0.55.2
 
   
 
@@ -33,10 +34,4 @@ flutter:
     - assets/
 
  
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
   

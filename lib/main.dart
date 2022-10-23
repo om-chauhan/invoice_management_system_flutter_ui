@@ -1,8 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:invoice_management/home.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:invoice_management/imports.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    kIsWeb
+        ? DevicePreview(
+            enabled: !kReleaseMode,
+            builder: (context) => MyApp(), // Wrap your app
+          )
+        : MyApp(),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -14,47 +21,19 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Invoice Management UI',
+      useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
-      title: 'Invoice Management System',
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       theme: ThemeData(
-        primaryIconTheme: IconThemeData(color: Colors.black),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          foregroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
         ),
       ),
-      home: SplashScreen(),
-    );
-  }
-}
-
-class SplashScreen extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return SplashScreenState();
-  }
-}
-
-class SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushAndRemoveUntil(context,
-          MaterialPageRoute(builder: (context) => Home()), (route) => false);
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
-      body: Center(
-        child: Image.asset(
-          'assets/images/flutter.png',
-          width: 250,
-          height: 250,
-        ),
-      ),
+      home: Splash(),
     );
   }
 }
