@@ -1,6 +1,9 @@
 import 'package:invoice_management/imports.dart';
 
 class MainView extends StatefulWidget {
+  final int initRoute;
+
+  const MainView({Key? key, required this.initRoute}) : super(key: key);
   @override
   _MainViewState createState() => _MainViewState();
 }
@@ -9,6 +12,11 @@ class _MainViewState extends State<MainView> {
   int _currentIndex = 0;
 
   List<Widget> tabs = [Home(), Invoice(), Payment(), Profile()];
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = widget.initRoute;
+  }
 
   @override
   Widget build(BuildContext context) {

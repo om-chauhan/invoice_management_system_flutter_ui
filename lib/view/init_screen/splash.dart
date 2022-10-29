@@ -12,7 +12,13 @@ class SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => MainView()), (route) => false);
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+              builder: (context) => MainView(
+                    initRoute: 0,
+                  )),
+          (route) => false);
     });
   }
 

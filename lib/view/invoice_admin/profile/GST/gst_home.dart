@@ -70,7 +70,7 @@ void displayBottomSheet(BuildContext context) {
     builder: (ctx) {
       return SafeArea(
         child: Container(
-          height: 250,
+          padding: MediaQuery.of(context).viewInsets,
           child: SingleChildScrollView(
             padding: EdgeInsets.all(20),
             child: Column(

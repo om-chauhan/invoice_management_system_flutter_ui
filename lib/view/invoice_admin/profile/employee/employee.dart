@@ -68,7 +68,7 @@ void employeeBottomSheet(BuildContext context) {
     context: context,
     builder: (ctx) {
       return Container(
-        height: 350,
+        padding: MediaQuery.of(context).viewInsets,
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),
           child: Column(

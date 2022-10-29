@@ -3,12 +3,7 @@ import 'package:invoice_management/imports.dart';
 
 void main() {
   runApp(
-    kIsWeb
-        ? DevicePreview(
-            enabled: !kReleaseMode,
-            builder: (context) => MyApp(), // Wrap your app
-          )
-        : MyApp(),
+    kIsWeb ? DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()) : MyApp(),
   );
 }
 

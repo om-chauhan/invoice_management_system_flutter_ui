@@ -52,7 +52,11 @@ class _SideNavState extends State<SideNav> {
                 itemCount: drawer.drawer.length,
                 itemBuilder: (BuildContext context, int i) {
                   return ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.pushAndRemoveUntil(
+                          context, MaterialPageRoute(builder: (_) => MainView(initRoute: i)), (route) => false);
+                    },
                     leading: Icon(
                       drawer.drawer[i].icon,
                       color: Colors.black,
@@ -66,13 +70,15 @@ class _SideNavState extends State<SideNav> {
                 },
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => Splash()), (route) => false);
+                },
                 leading: Icon(
                   Icons.power_settings_new,
                   color: Colors.black,
                 ),
                 title: TextBuilder(
-                  text: 'Log Out',
+                  text: 'Log out',
                   fontSize: 18.0,
                   color: Colors.black,
                 ),
