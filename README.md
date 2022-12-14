@@ -35,3 +35,7 @@ Invoice Management Application Using Dart language and Flutter Framework Clean U
 <!-- | Add GST                                     |     |     |
 | ------------------------------------------- | --- | --- |
 | ![Add GST](/assets/screenshots/add-gst.jpg) |     |     | -->
+
+## Licence
+
+[MIT Licence](https://raw.githubusercontent.com/om-chauhan/Invoice-Management-System-Flutter-UI/master/LICENCE)
