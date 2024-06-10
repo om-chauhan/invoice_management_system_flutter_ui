@@ -1,21 +1,21 @@
-import 'package:invoice_management/model/invoice_model.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class InvoiceController {
   final invoice = [
     InvoiceModel(
       userName: 'Petey Cruiser',
       amount: '121',
-      invoiceURL: 'assets/images/invoice-template.png',
+      invoiceURL: ImageAssets.invoiceTemplate,
     ),
     InvoiceModel(
       userName: 'Anna Thesia',
       amount: '5475',
-      invoiceURL: 'assets/images/invoice-template.png',
+      invoiceURL: ImageAssets.invoiceTemplate,
     ),
     InvoiceModel(
       userName: 'Paul Molive',
       amount: '846',
-      invoiceURL: 'assets/images/invoice-template.png',
+      invoiceURL: ImageAssets.invoiceTemplate,
     )
   ];
 }

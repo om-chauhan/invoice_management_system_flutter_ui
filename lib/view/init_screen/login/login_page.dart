@@ -1,7 +1,10 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _LoginScreenState createState() => _LoginScreenState();
 }
 
@@ -35,21 +38,21 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Form(
         key: _formPageKey,
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Stack(
               children: <Widget>[
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Expanded(
+                      const Expanded(
                         flex: 3,
-                        child: const SizedBox(),
+                        child: SizedBox(),
                       ),
-                      TextBuilder(
+                      const TextBuilder(
                         text: "Welcome",
                         color: Colors.black,
                         fontSize: 28,
@@ -63,9 +66,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(height: 20),
                       //_skipButton(),
                       _divider(),
-                      Expanded(
+                      const Expanded(
                         flex: 2,
-                        child: const SizedBox(),
+                        child: SizedBox(),
                       ),
                     ],
                   ),
@@ -86,21 +89,19 @@ class _LoginScreenState extends State<LoginScreen> {
     return GestureDetector(
       onTap: () async {},
       child: Container(
-        child: TextBuilder(text: 'Login', fontSize: 20, color: Colors.white),
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.symmetric(vertical: 15),
+        padding: const EdgeInsets.symmetric(vertical: 15),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(color: Colors.grey.shade200, offset: Offset(2, 4), blurRadius: 5, spreadRadius: 2)
-          ],
-          gradient: LinearGradient(
+          borderRadius: const BorderRadius.all(Radius.circular(5)),
+          boxShadow: <BoxShadow>[BoxShadow(color: Colors.grey.shade200, offset: const Offset(2, 4), blurRadius: 5, spreadRadius: 2)],
+          gradient: const LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [Commons.gradientBackgroundColorStart, Commons.gradientBackgroundColorEnd],
+            colors: [AppColors.gradientBackgroundColorStart, AppColors.gradientBackgroundColorEnd],
           ),
         ),
+        child: const TextBuilder(text: 'Login', fontSize: 20, color: Colors.white),
       ),
     );
   }
@@ -109,19 +110,19 @@ class _LoginScreenState extends State<LoginScreen> {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         alignment: Alignment.centerRight,
-        child: TextBuilder(text: 'Forgot Password ?', fontSize: 14, fontWeight: FontWeight.w500),
+        child: const TextBuilder(text: 'Forgot Password ?', fontSize: 14, fontWeight: FontWeight.w500),
       ),
     );
   }
 
   Widget _divider() {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      child: Row(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: const Row(
         children: <Widget>[
-          const SizedBox(width: 20),
+          SizedBox(width: 20),
         ],
       ),
     );
@@ -129,19 +130,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _createAccountLabel() {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       alignment: Alignment.bottomCenter,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          TextBuilder(text: 'Don\'t have an account ?', fontSize: 13, fontWeight: FontWeight.w600),
+          const TextBuilder(text: 'Don\'t have an account ?', fontSize: 13, fontWeight: FontWeight.w600),
           const SizedBox(width: 10),
           InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
             },
-            child: TextBuilder(
-                text: 'Register', color: Commons.mainAppFontColor, fontSize: 13, fontWeight: FontWeight.w600),
+            child: const TextBuilder(text: 'Register', color: AppColors.mainAppFontColor, fontSize: 13, fontWeight: FontWeight.w600),
           )
         ],
       ),
@@ -150,22 +150,22 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _emailField() {
     return TextFormField(
-      key: Key("userEmail"),
+      key: const Key("userEmail"),
       controller: _userEmail,
       validator: (value) => (value!.isEmpty) ? "Please Enter Email" : null,
-      style: GoogleFonts.lato(fontSize: 20.0),
-      decoration: InputDecoration(prefixIcon: Icon(Icons.email), labelText: "Email", border: OutlineInputBorder()),
+      style: GoogleFonts.poppins(fontSize: 20.0),
+      decoration: const InputDecoration(prefixIcon: Icon(Icons.email), labelText: "Email", border: OutlineInputBorder()),
     );
   }
 
   Widget _passwordField() {
     return TextFormField(
-      key: Key("userPassword"),
+      key: const Key("userPassword"),
       controller: _userPassword,
       obscureText: _obscureText,
       validator: (value) => (value!.isEmpty) ? "Please Enter Password" : null,
-      style: GoogleFonts.lato(fontSize: 20.0),
-      decoration: InputDecoration(prefixIcon: Icon(Icons.lock), labelText: "Password", border: OutlineInputBorder()),
+      style: GoogleFonts.poppins(fontSize: 20.0),
+      decoration: const InputDecoration(prefixIcon: Icon(Icons.lock), labelText: "Password", border: OutlineInputBorder()),
     );
   }
 

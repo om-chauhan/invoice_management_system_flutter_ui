@@ -1,13 +1,16 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _RegisterPageState createState() => _RegisterPageState();
 }
 
 class _RegisterPageState extends State<RegisterPage> {
   bool _obscureText = true;
-  TextStyle style = GoogleFonts.lato(fontSize: 20.0);
+  TextStyle style = GoogleFonts.poppins(fontSize: 20.0);
   TextEditingController _userEmail = TextEditingController();
   TextEditingController _userPassword = TextEditingController();
   final _formPageKey = GlobalKey<FormState>();
@@ -35,11 +38,11 @@ class _RegisterPageState extends State<RegisterPage> {
         context: context,
         builder: (BuildContext context) => AlertDialog(
               title: TextBuilder(text: message),
-              backgroundColor: Commons.popupItemBackColor,
-              shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(15)),
+              backgroundColor: AppColors.popupItemBackColor,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
               actions: <Widget>[
                 TextButton(
-                  child: TextBuilder(text: "Ok"),
+                  child: const TextBuilder(text: "Ok"),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -55,18 +58,18 @@ class _RegisterPageState extends State<RegisterPage> {
         body: Form(
             key: _formPageKey,
             child: SingleChildScrollView(
-                child: Container(
+                child: SizedBox(
               height: MediaQuery.of(context).size.height,
               child: Stack(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Expanded(flex: 3, child: const SizedBox()),
-                        TextBuilder(
+                        const Expanded(flex: 3, child: SizedBox()),
+                        const TextBuilder(
                           text: "Welcome",
                           color: Colors.black,
                           fontSize: 28,
@@ -76,7 +79,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         _emailPasswordWidget(),
                         const SizedBox(height: 20),
                         _registerButton(),
-                        Expanded(flex: 2, child: const SizedBox())
+                        const Expanded(flex: 2, child: SizedBox())
                       ],
                     ),
                   ),
@@ -96,14 +99,14 @@ class _RegisterPageState extends State<RegisterPage> {
         Navigator.pop(context);
       },
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(left: 0, top: 10, bottom: 10),
-              child: Icon(Icons.keyboard_arrow_left, color: Colors.white),
+              padding: const EdgeInsets.only(left: 0, top: 10, bottom: 10),
+              child: const Icon(Icons.keyboard_arrow_left, color: Colors.white),
             ),
-            TextBuilder(text: 'Back', fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white)
+            const TextBuilder(text: 'Back', fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white)
           ],
         ),
       ),
@@ -114,40 +117,37 @@ class _RegisterPageState extends State<RegisterPage> {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        child: TextBuilder(text: 'Register Now', fontSize: 20, color: Colors.white),
         width: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.symmetric(vertical: 15),
+        padding: const EdgeInsets.symmetric(vertical: 15),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(color: Colors.grey.shade200, offset: Offset(2, 4), blurRadius: 5, spreadRadius: 2)
-          ],
-          gradient: LinearGradient(
+          borderRadius: const BorderRadius.all(Radius.circular(5)),
+          boxShadow: <BoxShadow>[BoxShadow(color: Colors.grey.shade200, offset: const Offset(2, 4), blurRadius: 5, spreadRadius: 2)],
+          gradient: const LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
-            colors: [Commons.gradientBackgroundColorStart, Commons.gradientBackgroundColorEnd],
+            colors: [AppColors.gradientBackgroundColorStart, AppColors.gradientBackgroundColorEnd],
           ),
         ),
+        child: const TextBuilder(text: 'Register Now', fontSize: 20, color: Colors.white),
       ),
     );
   }
 
   Widget _loginAccountLabel() {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       alignment: Alignment.bottomCenter,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          TextBuilder(text: 'Already have an account ?', fontSize: 13, fontWeight: FontWeight.w600),
+          const TextBuilder(text: 'Already have an account ?', fontSize: 13, fontWeight: FontWeight.w600),
           const SizedBox(width: 10),
           InkWell(
             onTap: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
             },
-            child:
-                TextBuilder(text: 'Login', color: Commons.mainAppFontColor, fontSize: 13, fontWeight: FontWeight.w600),
+            child: const TextBuilder(text: 'Login', color: AppColors.mainAppFontColor, fontSize: 13, fontWeight: FontWeight.w600),
           )
         ],
       ),
@@ -156,22 +156,22 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _emailField() {
     return TextFormField(
-      key: Key("userEmail"),
+      key: const Key("userEmail"),
       controller: _userEmail,
       validator: (value) => (value!.isEmpty) ? "Please Enter Email" : null,
       style: style,
-      decoration: InputDecoration(prefixIcon: Icon(Icons.email), labelText: "Email", border: OutlineInputBorder()),
+      decoration: const InputDecoration(prefixIcon: Icon(Icons.email), labelText: "Email", border: OutlineInputBorder()),
     );
   }
 
   Widget _passwordField() {
     return TextFormField(
-      key: Key("userPassword"),
+      key: const Key("userPassword"),
       controller: _userPassword,
       obscureText: _obscureText,
       validator: (value) => (value!.isEmpty) ? "Please Enter Password" : null,
       style: style,
-      decoration: InputDecoration(prefixIcon: Icon(Icons.lock), labelText: "Password", border: OutlineInputBorder()),
+      decoration: const InputDecoration(prefixIcon: Icon(Icons.lock), labelText: "Password", border: OutlineInputBorder()),
     );
   }
 

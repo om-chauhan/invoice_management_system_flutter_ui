@@ -1,4 +1,4 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class InvoiceCardTile extends StatelessWidget {
   final InvoiceModel data;
@@ -16,16 +16,16 @@ class InvoiceCardTile extends StatelessWidget {
             return AlertDialog(
               actionsPadding: EdgeInsets.zero,
               buttonPadding: EdgeInsets.zero,
-              contentPadding: EdgeInsets.all(8),
+              contentPadding: const EdgeInsets.all(8),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextBuilder(text: 'Invoice'),
+                  const TextBuilder(text: 'Invoice'),
                   IconButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(Icons.close))
+                      icon: const Icon(Icons.close))
                 ],
               ),
               content: InteractiveViewer(
@@ -41,15 +41,8 @@ class InvoiceCardTile extends StatelessWidget {
           },
         );
       },
-      title: TextBuilder(
-        text: data.userName,
-        fontSize: 18.0,
-        color: Colors.black,
-      ),
-      subtitle: TextBuilder(
-        text: '₹ ${data.amount}',
-        fontSize: 12,
-      ),
+      title: TextBuilder(text: data.userName, fontSize: 18.0, color: Colors.black),
+      subtitle: TextBuilder(text: '₹ ${data.amount}', fontSize: 12),
       trailing: CircleAvatar(
         radius: 20,
         backgroundColor: Colors.white,

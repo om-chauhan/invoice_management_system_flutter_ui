@@ -1,17 +1,18 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class MainView extends StatefulWidget {
   final int initRoute;
 
   const MainView({Key? key, required this.initRoute}) : super(key: key);
   @override
+  // ignore: library_private_types_in_public_api
   _MainViewState createState() => _MainViewState();
 }
 
 class _MainViewState extends State<MainView> {
   int _currentIndex = 0;
 
-  List<Widget> tabs = [Home(), Invoice(), Payment(), Profile()];
+  List<Widget> tabs = const [Home(), Invoice(), Payment(), Settings()];
   @override
   void initState() {
     super.initState();
@@ -24,12 +25,12 @@ class _MainViewState extends State<MainView> {
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.white,
-        title: TextBuilder(
+        title: const TextBuilder(
           text: 'Invoice Management UI',
           color: Colors.black,
         ),
       ),
-      drawer: Drawer(child: SideNav()),
+      drawer: const SideNav(),
       body: tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.black,
@@ -40,11 +41,11 @@ class _MainViewState extends State<MainView> {
           });
         },
         currentIndex: _currentIndex,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.toc), label: 'Invoice'),
           BottomNavigationBarItem(icon: Icon(Icons.account_balance), label: 'Payment'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
         ],
       ),
     );

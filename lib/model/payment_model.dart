@@ -1,8 +1,8 @@
 class PaymentModel {
   final String? avatar;
   final String? userName;
-  final String? payMoney;
   final String? date;
+  final String? payment;
 
-  PaymentModel({this.avatar, this.userName, this.payMoney, this.date});
+  PaymentModel({this.avatar, this.userName, this.date, this.payment});
 }

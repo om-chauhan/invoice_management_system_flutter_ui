@@ -1,7 +1,10 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class AddCustomer extends StatefulWidget {
+  const AddCustomer({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _AddCustomerState createState() => _AddCustomerState();
 }
 
@@ -13,28 +16,28 @@ class _AddCustomerState extends State<AddCustomer> {
         backgroundColor: Colors.black,
         tooltip: 'Save',
         onPressed: () {},
-        child: Icon(
+        child: const Icon(
           Icons.save,
           color: Colors.white,
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(5.0),
+        padding: const EdgeInsets.all(5.0),
         child: ListView(
           children: [
-            TextBuilder(
+            const TextBuilder(
               text: 'Add Customer',
               fontSize: 40.0,
               fontWeight: FontWeight.bold,
             ),
             const SizedBox(height: 20.0),
-            TextBuilder(text: 'BASIC INFO'),
+            const TextBuilder(text: 'BASIC INFO'),
             const SizedBox(height: 20.0),
             Container(
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.greenAccent),
                 shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(20.0),
                 ),
               ),
@@ -44,15 +47,15 @@ class _AddCustomerState extends State<AddCustomer> {
                   Container(
                     width: 100.0,
                     height: 100.0,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.black12,
                       shape: BoxShape.circle,
                     ),
-                    child: Center(
+                    child: const Center(
                       child: TextBuilder(text: 'Logo'),
                     ),
                   ),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -65,14 +68,14 @@ class _AddCustomerState extends State<AddCustomer> {
                     ],
                   ),
                   IconButton(
-                    icon: Icon(Icons.keyboard_arrow_right),
+                    icon: const Icon(Icons.keyboard_arrow_right),
                     onPressed: () {},
                   )
                 ],
               ),
             ),
             const SizedBox(height: 20.0),
-            Form(
+            const Form(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

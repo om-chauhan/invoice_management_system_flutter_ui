@@ -1,4 +1,4 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class AddCustomerField extends StatelessWidget {
   final String? customerLabelText, customerHintText;
@@ -15,12 +15,12 @@ class AddCustomerField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+      padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
       child: TextFormField(
         maxLines: maxLine,
         keyboardType: inputType,
         decoration: InputDecoration(
-          hintStyle: GoogleFonts.lato(
+          hintStyle: GoogleFonts.poppins(
             fontSize: 15.0,
             fontWeight: FontWeight.normal,
           ),
@@ -28,7 +28,7 @@ class AddCustomerField extends StatelessWidget {
           hintText: customerHintText,
           suffixIcon: InkWell(
             onTap: () => {},
-            child: Icon(Icons.clear),
+            child: const Icon(Icons.clear),
           ),
         ),
       ),

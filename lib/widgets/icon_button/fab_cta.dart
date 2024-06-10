@@ -1,4 +1,4 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class FabCTA extends StatelessWidget {
   final String? title;
@@ -14,7 +14,7 @@ class FabCTA extends StatelessWidget {
           Container(
             height: 50.0,
             width: 50.0,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.black,
               shape: BoxShape.circle,
             ),

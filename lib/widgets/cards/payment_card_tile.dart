@@ -1,4 +1,4 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class PaymentCardTile extends StatelessWidget {
   final PaymentModel? data;
@@ -15,7 +15,7 @@ class PaymentCardTile extends StatelessWidget {
         color: Colors.black,
       ),
       subtitle: TextBuilder(
-        text: '₹ ${data!.payMoney}',
+        text: '₹ ${data!.date}',
         fontSize: 12,
       ),
       trailing: CircleAvatar(

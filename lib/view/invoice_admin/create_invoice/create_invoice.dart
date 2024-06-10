@@ -1,4 +1,4 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class CreateInvoiceTemplate extends StatelessWidget {
   const CreateInvoiceTemplate({Key? key}) : super(key: key);
@@ -8,14 +8,14 @@ class CreateInvoiceTemplate extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
-        title: TextBuilder(
+        title: const TextBuilder(
           text: 'Create Invoice',
           color: Colors.black,
         ),
-        actions: [
+        actions: const [
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(right: 15),
+              padding: EdgeInsets.only(right: 15),
               child: TextBuilder(
                 text: '001',
                 fontSize: 15.0,
@@ -27,13 +27,12 @@ class CreateInvoiceTemplate extends StatelessWidget {
       ),
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           children: [
-            TextBuilder(text: '# Customer Details', fontSize: 18.0),
+            const TextBuilder(text: '# Customer Details', fontSize: 18.0),
             const SizedBox(height: 20.0),
-            AddInvoiceTextfield(
+            const CustomTextField(
               label: 'Phone Number',
-              height: 45,
               prefixIcon: Icon(
                 Icons.phone,
                 size: 25,
@@ -41,9 +40,8 @@ class CreateInvoiceTemplate extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15.0),
-            AddInvoiceTextfield(
+            const CustomTextField(
               label: 'Customer Name',
-              height: 45,
               prefixIcon: Icon(
                 Icons.person,
                 size: 25,
@@ -51,9 +49,8 @@ class CreateInvoiceTemplate extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15.0),
-            AddInvoiceTextfield(
+            const CustomTextField(
               label: 'Customer GST Number',
-              height: 45,
               prefixIcon: Icon(
                 Icons.numbers,
                 size: 25,
@@ -61,9 +58,9 @@ class CreateInvoiceTemplate extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20.0),
-            TextBuilder(text: 'Product Details', fontSize: 20.0),
+            const TextBuilder(text: 'Product Details', fontSize: 20.0),
             const SizedBox(height: 5.0),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
@@ -72,7 +69,7 @@ class CreateInvoiceTemplate extends StatelessWidget {
                     fontSize: 12.0,
                   ),
                 ),
-                const SizedBox(width: 30.0),
+                SizedBox(width: 30.0),
                 Expanded(
                   child: TextBuilder(
                     text: 'Computer Parts',
@@ -83,7 +80,7 @@ class CreateInvoiceTemplate extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 5.0),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
@@ -92,7 +89,7 @@ class CreateInvoiceTemplate extends StatelessWidget {
                     fontSize: 12.0,
                   ),
                 ),
-                const SizedBox(width: 30.0),
+                SizedBox(width: 30.0),
                 Expanded(
                   child: TextBuilder(
                     text: '20 X 30',
@@ -103,7 +100,7 @@ class CreateInvoiceTemplate extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 5.0),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
@@ -112,7 +109,7 @@ class CreateInvoiceTemplate extends StatelessWidget {
                     fontSize: 12.0,
                   ),
                 ),
-                const SizedBox(width: 30.0),
+                SizedBox(width: 30.0),
                 Expanded(
                   child: TextBuilder(
                     text: '20 Unit',
@@ -123,7 +120,7 @@ class CreateInvoiceTemplate extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20.0),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextBuilder(text: 'Total', fontSize: 20.0),

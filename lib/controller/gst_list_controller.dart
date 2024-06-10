@@ -1,16 +1,16 @@
-import 'package:invoice_management/model/list_data_model.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class GSTListController {
   final list = [
-    ListDataModel(
+    EmployeeModel(
       title: 'GST Number 1',
       subTitle: '69Bjdjd3256M5VH',
     ),
-    ListDataModel(
+    EmployeeModel(
       title: 'GST Number 1',
       subTitle: '69BGHYdsks6M5VH',
     ),
-    ListDataModel(
+    EmployeeModel(
       title: 'GST Number 3',
       subTitle: '69BGHY32sdsd5VH',
     ),

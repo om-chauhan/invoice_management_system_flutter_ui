@@ -1,4 +1,4 @@
-import 'package:invoice_management/imports.dart';
+import 'package:invoice_management_system_flutter_ui/imports.dart';
 
 class Error extends StatelessWidget {
   final String? errorMessage;
@@ -21,8 +21,8 @@ class Error extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           ElevatedButton(
-            child: TextBuilder(text: 'Retry', color: Colors.black),
             onPressed: onRetryPressed,
+            child: const TextBuilder(text: 'Retry', color: Colors.black),
           )
         ],
       ),
