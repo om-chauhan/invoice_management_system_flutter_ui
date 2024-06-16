@@ -1,20 +1,23 @@
-<!-- @format -->
-
 # Invoice Management UI
 
 Invoice Management Application Using Dart language and Flutter Framework Clean UI.
 
-[Demo Apk](demo_apk/app-release.apk)
+## 🚀 Installation or Run server
 
-### Getting Started
+Install, run the development server:
 
-1. `git clone https://github.com/om-chauhan/Invoice-Management-System-Flutter-UI.git`
+```bash
+1. git clone https://github.com/om-chauhan/invoice_management_system_flutter_ui.git
+```
+```bash
+2. flutter pub get
+```
+```bash
+3. flutter run
+```
 
-2. `flutter pub get`
 
-3. `flutter run`
-
-### Screenshots
+## 👤 Screenshots
 
 | Side Drawer                                  | Home                           | Create Invoice                                     |
 | -------------------------------------------- | ------------------------------ | -------------------------------------------------- |
@@ -31,11 +34,22 @@ Invoice Management Application Using Dart language and Flutter Framework Clean U
 | Product List                                   | Add Product                                  | GST List                               |
 | ---------------------------------------------- | -------------------------------------------- | -------------------------------------- |
 | ![Product List](/screenshots/product-list.jpg) | ![Add Product](/screenshots/add-product.jpg) | ![GST List](/screenshots/gst-list.jpg) |
+<!--![App Screenshot](/screenshot/Screenshot_1.png)-->
 
-<!-- | Add GST                                     |     |     |
-| ------------------------------------------- | --- | --- |
-| ![Add GST](/screenshots/add-gst.jpg) |     |     | -->
+## 🌐 Live APK
 
-## Licence
+Demp APK [Visit](https://github.com/om-chauhan/invoice_management_system_flutter_ui/blob/master/demo_apk/app-release.apk)
 
-[MIT Licence](https://raw.githubusercontent.com/om-chauhan/Invoice-Management-System-Flutter-UI/master/LICENCE)
+## 🔗 Links
+
+- [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://om-chauhan.co.in)
+- [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/omprakash-chauhan/)
+- [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/_Omi_Op)
+
+## 🔑 License
+
+[MIT](/LICENCE)
+
+## 👤 Authors
+
+- [@om-chauhan](https://github.com/om-chauhan)
